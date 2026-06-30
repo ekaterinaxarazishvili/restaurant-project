@@ -1,0 +1,749 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#fff;
+    color:#222;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:20px 0;
+    transition:.3s;
+}
+
+.header.active{
+    background:#111;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo, .logo h1, .logo a {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff9900 !important; /* !important-ი უზრუნველყოფს, რომ სხვა ფერმა არ გადაფაროს */
+}
+
+.nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:#ff9900;
+}
+
+.burger{
+    display:none;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    background:#111;
+    color:white;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:10px;
+    color: rgb(93, 175, 226);
+}
+
+
+.hero-image{
+    flex:1;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:20px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff9900;
+    color:white;
+    text-decoration:none;
+    padding:15px 30px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 0;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+}
+
+/* CATEGORIES */
+
+.category-card{
+    text-decoration:none;
+    color:inherit;
+}
+
+.category-wrapper{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.category-card{
+    background:#f4f4f4;
+    text-align:center;
+    padding:40px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-10px);
+    background:#ff9900;
+    color:white;
+}
+
+/* FOOD */
+
+.food-wrapper{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.food-card{
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.food-card:hover{
+    transform:scale(1.05);
+}
+
+.food-card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.food-card h3{
+    padding:15px;
+}
+
+.food-card span{
+    display:block;
+    padding:0 15px 15px;
+    color:#ff9900;
+    font-weight:600;
+}
+
+
+/* FORM */
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input{
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    background:#ff9900;
+    color:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+.password-box{
+    display:flex;
+    gap:10px;
+}
+
+.password-box input{
+    flex:1;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:40px 0;
+}
+
+/* COOKIE */
+.cookie{
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* მარცხენა ქვედა კუთხეში გადმოვიტანე, რომ scroll-top ღილაკს არ დაეჯახოს */
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999; /* ყველაზე მაღალი ინდექსი, რომ საიტის არცერთმა ნაწილმა არ გადაფაროს */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    max-width: 300px;
+}
+
+.cookie button{
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #ff9900;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.cookie button:hover{
+    background: #e68a00;
+}
+
+/* SCROLL TOP */
+
+.scroll-top{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border:none;
+    background:#ff9900;
+    color:white;
+    border-radius:50%;
+    cursor:pointer;
+    display:none;
+}
+
+/* TABLET */
+
+@media(max-width:1024px){
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    .category-wrapper{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .chef-wrapper{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+/* 768 */
+
+@media(max-width:768px){
+
+    .hero-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .food-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .nav{
+        position:absolute;
+        top:80px;
+        right:-100%;
+        background:#111;
+        width:250px;
+        padding:30px;
+        transition:.3s;
+    }
+
+    .nav.active{
+        right:0;
+    }
+
+    .nav ul{
+        flex-direction:column;
+    }
+
+    .burger{
+        display:block;
+    }
+}
+
+/* 480 */
+
+@media(max-width:480px){
+
+    h2{
+        font-size:30px;
+    }
+
+    .hero-text h1{
+        font-size:35px;
+    }
+
+    .category-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .chef-wrapper{
+        grid-template-columns:1fr;
+    }
+}
+
+/* 320 */
+
+@media(max-width:320px){
+
+    .hero-text h1{
+        font-size:28px;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#111;
+    color:#fff;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/* COOKIE */
+
+.cookie{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#222;
+    padding:15px;
+    border-radius:10px;
+    z-index:1000;
+}
+
+.cookie button{
+    margin-top:10px;
+    padding:8px 15px;
+    border:none;
+    background:#ff9900;
+    cursor:pointer;
+}
+
+/* HEADER */
+
+.header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:999;
+    transition:.3s;
+}
+
+.header.active{
+    background:#000;
+    box-shadow:0 2px 10px rgba(0,0,0,.4);
+}
+
+.header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 0;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#ff9900;
+}
+
+.nav ul{
+    display:flex;
+    gap:30px;
+}
+
+.nav a{
+    color:white;
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:#ff9900;
+}
+
+.burger{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    padding-top:120px;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-text p{
+    margin-bottom:25px;
+    color:#ccc;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff9900;
+    color:white;
+    padding:14px 30px;
+    border-radius:6px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.hero-image img{
+    border-radius:20px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 0;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+}
+
+/* CATEGORIES */
+
+.category-wrapper{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.category-card{
+    background:#1a1a1a;
+    padding:40px;
+    text-align:center;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.category-card:hover{
+    transform:translateY(-10px);
+    background:#ff9900;
+}
+
+/* FOOD */
+
+.food-wrapper{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.food-card{
+    background:#1a1a1a;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.food-card:hover{
+    transform:scale(1.03);
+}
+
+.food-card h3{
+    padding:15px;
+}
+
+.food-card span{
+    display:block;
+    padding:0 15px 20px;
+    color:#ff9900;
+}
+
+
+/* CONTACT */
+
+.contact form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact input{
+    padding:15px;
+    border:none;
+    outline:none;
+}
+
+.contact button{
+    padding:15px;
+    border:none;
+    background:#ff9900;
+    color:white;
+    cursor:pointer;
+}
+
+.password-box{
+    display:flex;
+}
+
+.password-box input{
+    flex:1;
+}
+
+.password-box button{
+    width:100px;
+}
+
+/* SCROLL TOP */
+
+.scroll-top{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:#ff9900;
+    color:white;
+    cursor:pointer;
+    display:none;
+}
+
+/* FOOTER */
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:40px 0;
+}
+
+footer p{
+    margin-top:10px;
+    color:#aaa;
+}
+
+/* TABLET */
+
+@media(max-width:1024px){
+
+.hero-text h1{
+    font-size:45px;
+}
+
+.chef-wrapper{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* 768 */
+
+@media(max-width:768px){
+
+.hero-content{
+    grid-template-columns:1fr;
+}
+
+.food-wrapper{
+    grid-template-columns:1fr 1fr;
+}
+
+.category-wrapper{
+    grid-template-columns:1fr 1fr;
+}
+
+.nav{
+    position:absolute;
+    top:100%;
+    left:-100%;
+    width:100%;
+    background:black;
+    transition:.3s;
+}
+
+.nav.active{
+    left:0;
+}
+
+.nav ul{
+    flex-direction:column;
+    padding:20px;
+}
+
+.burger{
+    display:block;
+}
+
+.hero-text{
+    text-align:center;
+}
+
+}
+
+/* 480 */
+
+@media(max-width:480px){
+
+.hero-text h1{
+    font-size:35px;
+}
+
+.food-wrapper{
+    grid-template-columns:1fr;
+}
+
+.category-wrapper{
+    grid-template-columns:1fr;
+}
+
+.chef-wrapper{
+    grid-template-columns:1fr;
+}
+
+section h2{
+    font-size:30px;
+}
+
+}
+
+/* 320 */
+
+@media(max-width:320px){
+
+.hero-text h1{
+    font-size:28px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+}
